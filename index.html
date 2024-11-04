@@ -1,3 +1,4 @@
+#code by DARK_LVL
 <html lang="es">
  <head>
   <meta charset="utf-8"/>
@@ -54,13 +55,49 @@
      border-color: #1e3a8a;
     }
    }
+   .bounce {
+    animation: bounce 2s infinite;
+   }
+   @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+     transform: translateY(0);
+    }
+    40% {
+     transform: translateY(-30px);
+    }
+    60% {
+     transform: translateY(-15px);
+    }
+   }
+   .pulse {
+    animation: pulse 2s infinite;
+   }
+   @keyframes pulse {
+    0% {
+     transform: scale(1);
+    }
+    50% {
+     transform: scale(1.05);
+    }
+    100% {
+     transform: scale(1);
+    }
+   }
+   .hover-grow:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+   }
+   .hover-glow:hover {
+    box-shadow: 0 0 20px #00ff00;
+    transition: box-shadow 0.3s ease-in-out;
+   }
   </style>
  </head>
  <body class="font-roboto text-gray-100 gradient-bg">
   <header class="bg-black text-white">
    <div class="container mx-auto flex justify-between items-center py-4">
     <div class="flex items-center">
-     <img alt="Logo de DARK SECURITY con un escudo de ciberseguridad" class="h-12 w-12 mr-3" height="50" src="icon.png" width="50"/>
+     <img alt="Logo de DARK SECURITY con un escudo de ciberseguridad" class="h-12 w-12 mr-3 bounce" height="50" src="icon.png" width="50"/>
      <h1 class="text-2xl font-bold neon-text">
       DARK SECURITY
      </h1>
@@ -68,17 +105,17 @@
     <nav>
      <ul class="flex space-x-6">
       <li>
-       <a class="hover:text-gray-400" href="#about">
+       <a class="hover:text-gray-400 hover-grow" href="#about">
         Sobre Nosotros
        </a>
       </li>
       <li>
-       <a class="hover:text-gray-400" href="#services">
+       <a class="hover:text-gray-400 hover-grow" href="#services">
         Servicios
        </a>
       </li>
       <li>
-       <a class="hover:text-gray-400" href="#contact">
+       <a class="hover:text-gray-400 hover-grow" href="#contact">
         Contacto
        </a>
       </li>
@@ -88,7 +125,7 @@
   </header>
   <section class="py-12 text-white text-center fade-in">
    <div class="container mx-auto">
-    <img alt="Logo de DARK SECURITY con un escudo de ciberseguridad" class="mx-auto h-48 w-48 mb-6" height="192" src="icon.png" width="192"/>
+    <img alt="Logo de DARK SECURITY con un escudo de ciberseguridad" class="mx-auto h-48 w-48 mb-6 pulse" height="192" src="icon.png" width="192"/>
     <h2 class="text-4xl font-bold mb-6 neon-text">
      Bienvenidos a DARK SECURITY
     </h2>
@@ -105,7 +142,7 @@
     <p class="text-lg leading-relaxed mb-6">
      En DARK SECURITY, nos dedicamos a proteger tu información y tus activos digitales. Con años de experiencia en el campo de la ciberseguridad, ofrecemos soluciones avanzadas tanto en software como en hardware para garantizar la máxima seguridad.
     </p>
-    <img alt="Equipo de ciberseguridad trabajando en una oficina con múltiples pantallas y gráficos de seguridad" class="mx-auto rounded-lg shadow-lg neon-border" height="400" src="image.png" width="600"/>
+    <img alt="Equipo de ciberseguridad trabajando en una oficina con múltiples pantallas y gráficos de seguridad" class="mx-auto rounded-lg shadow-lg neon-border hover-glow" height="400" src="image.png" width="600"/>
    </div>
   </section>
   <section class="py-12 text-white" id="services">
@@ -114,8 +151,8 @@
      Nuestros Servicios
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div class="bg-black p-6 rounded-lg shadow-lg neon-border">
-      <i class="fas fa-shield-alt text-4xl text-blue-900 mb-4">
+     <div class="bg-black p-6 rounded-lg shadow-lg neon-border hover-glow">
+      <i class="fas fa-shield-alt text-4xl text-blue-900 mb-4 pulse">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Antivirus
@@ -124,8 +161,8 @@
        Protege tus dispositivos con nuestro software antivirus de última generación.
       </p>
      </div>
-     <div class="bg-black p-6 rounded-lg shadow-lg neon-border">
-      <i class="fas fa-key text-4xl text-red-600 mb-4">
+     <div class="bg-black p-6 rounded-lg shadow-lg neon-border hover-glow">
+      <i class="fas fa-key text-4xl text-red-600 mb-4 pulse">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Llaves de Seguridad
@@ -134,8 +171,8 @@
        Asegura tus cuentas con nuestras llaves de seguridad físicas y digitales.
       </p>
      </div>
-     <div class="bg-black p-6 rounded-lg shadow-lg neon-border">
-      <i class="fas fa-lock text-4xl text-gray-300 mb-4">
+     <div class="bg-black p-6 rounded-lg shadow-lg neon-border hover-glow">
+      <i class="fas fa-lock text-4xl text-gray-300 mb-4 pulse">
       </i>
       <h3 class="text-xl font-bold mb-2">
        Consultoría
@@ -174,7 +211,7 @@
       </label>
       <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Tu mensaje" rows="4"></textarea>
      </div>
-     <button class="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-700 neon-border" type="submit">
+     <button class="bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-700 neon-border hover-glow" type="submit">
       Enviar
      </button>
     </form>
